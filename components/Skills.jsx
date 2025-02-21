@@ -1,5 +1,8 @@
+'use client'
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
+import {motion} from 'framer-motion'
 
 export default function Skills() {
   const skills = [
@@ -26,22 +29,42 @@ export default function Skills() {
   ]
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    className="container mx-auto px-4 py-16"
+    >
+      
       <h2 className="text-3xl font-bold text-center mb-8">Mis Habilidades</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skills.map((skill, index) => (
-          <Card key={index}>
+          <motion.div
+          key={index}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <Card>
             <CardHeader>
               <CardTitle>{skill.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <Progress value={skill.level} className="w-full" />
-              <span className="text-sm text-muted-foreground">{skill.level}%</span>
+             <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: `${skill.level}%` }}
+              transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+             >
+             <Progress value={skill.level} className="w-full" />
+             <span className="text-sm text-muted-foreground">{skill.level}%</span>
+             </motion.div>
             </CardContent>
           </Card>
+          </motion.div>
         ))}
       </div>
-    </div>
+    
+    </motion.div>
   )
 }
 

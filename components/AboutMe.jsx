@@ -1,57 +1,80 @@
+"use client"
 
-import Image from "next/image"
-import {CircleDot } from "lucide-react"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { CircleDot } from "lucide-react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { motion } from "framer-motion"
 
 export default function AboutMe() {
   return (
-    <div className="container mx-auto px-4 py-16">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="container mx-auto px-4 py-16"
+    >
       <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-        <div className="text-center md:w-1/3">
-          <div className="relative w-48 h-48 mx-auto mb-4">
-            <Image
-              src="/img-me-Photoroom(1).png"
-              alt="Juan Cruz Urban"
-              objectFit="cover"
-              layout="fill"
-              className="rounded-full shadow-lg object-cover contain-layout"
-            />
-          </div>
+        <motion.div
+          initial={{ scale: 0.8 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center md:w-1/3"
+        >
+          <Avatar className="w-48 h-48 mx-auto mb-4">
+            <AvatarImage src="/img-me-Photoroom(1).png" alt="Juan Cruz Urban" className="object-cover contain-layout" />
+            <AvatarFallback>JCU</AvatarFallback>
+          </Avatar>
           <h2 className="text-2xl font-bold mb-2">Juan Cruz Urban</h2>
           <p className="text-muted-foreground mb-4">Programador Web Fullstack | Argentina</p>
           <div className="flex justify-center space-x-4">
-            <Button variant="outline" size="icon" asChild>
-              <Link href="https://github.com/juancruz12345">
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Link href="https://github.com/juancruz12345" target="_blank" rel="noopener noreferrer">
+                <Github className="h-6 w-6" />
               </Link>
-            </Button>
-            <Button variant="outline" size="icon" asChild>
-              <Link href="https://www.linkedin.com/in/juan-cruz-urban-1b1907266/">
-                <LinkedIn className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Link
+                href="https://www.linkedin.com/in/juan-cruz-urban-1b1907266/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedIn className="h-6 w-6" />
               </Link>
-            </Button>
+            </motion.div>
           </div>
-        </div>
-        <Card className="md:w-2/3">
-          <CardContent className="p-6">
-            <p className="text-lg mb-4">
-              ¡Hola! Soy un developer con experiencia en frontend (React, JavaScript, Next js) y backend (Node.js, Express). Me
-              especializo en integración de APIs, bases de datos (SQL, NoSQL) y soluciones de e-commerce, con capacidad
-              para gestionar todo el ciclo de desarrollo de aplicaciones web.
-            </p>
-            <p className="mb-4">Me motiva el hecho de poder crear aplicaciones que ayuden a los demás.</p>
-            <div className="flex items-center text-green-500">
-              <CircleDot className="h-4 w-4 mr-2" />
-              <span>Disponible para trabajar</span>
-            </div>
-          </CardContent>
-        </Card>
+        </motion.div>
+        <motion.div
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="md:w-2/3"
+        >
+          <Card>
+            <CardHeader>
+              <CardTitle>Sobre Mí</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-4">
+                ¡Hola! Soy un developer con experiencia en frontend (React, JavaScript) y backend (Node.js, Express). Me
+                especializo en integración de APIs, bases de datos (SQL, NoSQL) y soluciones de e-commerce, con
+                capacidad para gestionar todo el ciclo de desarrollo de aplicaciones web.
+              </p>
+              <p className="mb-4">Me motiva el hecho de poder crear aplicaciones que ayuden a los demás.</p>
+              <motion.div
+                className="flex items-center text-green-500"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <CircleDot className="h-4 w-4 mr-2" />
+                <span>Disponible para trabajar</span>
+              </motion.div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
@@ -61,6 +84,13 @@ export default function AboutMe() {
 
 
 
+/**<Image
+              src="/img-me-Photoroom(1).png"
+              alt="Juan Cruz Urban"
+              objectFit="cover"
+              layout="fill"
+              className="rounded-full shadow-lg object-cover contain-layout"
+            /> */
 
 function Github(){
     return(

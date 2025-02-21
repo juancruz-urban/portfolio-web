@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import emailjs from '@emailjs/browser'
+import { motion } from "framer-motion"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -58,7 +59,13 @@ export default function Contact() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <motion.div
+    className="container mx-auto px-4 py-16"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    >
+      
       <h2 className="text-3xl font-bold text-center mb-8">Contáctame</h2>
       <Card className="max-w-md mx-auto">
         <CardHeader>
@@ -105,7 +112,8 @@ export default function Contact() {
           </form>
         </CardContent>
       </Card>
-    </div>
+    
+    </motion.div>
   )
 }
 

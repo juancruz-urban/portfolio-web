@@ -1,8 +1,14 @@
+"use client"
+
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
 import Image from "next/image"
 import { ProyectsArray } from "@/proyects"
+
+import { motion } from "framer-motion"
+
+const AnimatedButton = motion(Button)
 
 
 export default function Projects() {
@@ -10,20 +16,30 @@ export default function Projects() {
   const {projectsArray} = ProyectsArray()
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    className="container mx-auto px-4 py-16"
+    >
+     
       <h2 className="text-3xl font-bold text-center mb-8">Mis Proyectos</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectsArray.map((project, index) => (
-          <Card key={index} className="flex flex-col">
+         <motion.div
+         key={index}
+         initial={{ opacity: 0, y: 50 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.5, delay: index * 0.1 }}
+         >
+           <Card className="flex flex-col">
             <CardHeader className='p-0'>
               <div className="relative w-full h-48">
               <Image
                 src={project.imagenPortada || "/placeholder.svg"}
                 alt={project.nombre}
-               
-                objectFit="cover"
                 layout="fill"
-                className="rounded-t-lg"
+                className="rounded-t-lg object-cover"
               />
               </div>
             </CardHeader>
@@ -31,26 +47,34 @@ export default function Projects() {
               <CardTitle className="mb-2 mt-4">{project.nombre}</CardTitle>
               <p>{project.descripcion}</p>
             </CardContent>
-            <CardFooter className="mt-auto">
-              <Button variant="outline" className="mr-2" asChild>
-                <a href={project.linkGithub} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" /> GitHub
-                </a>
-              </Button>
-            {
-              project?.link && (
-                <Button asChild>
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-4 w-4" /> Demo
-                </a>
-              </Button>
-              )
-            }
-            </CardFooter>
+            <CardFooter>
+      <AnimatedButton
+        variant="outline"
+        className="mr-2"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        asChild
+      >
+        <a href={project.linkGithub} target="_blank" rel="noopener noreferrer">
+          <Github className="mr-2 h-4 w-4" /> GitHub
+        </a>
+      </AnimatedButton>
+      {
+        project?.link && (
+          <AnimatedButton whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} asChild>
+        <a href={project?.link} target="_blank" rel="noopener noreferrer">
+          <ExternalLink className="mr-2 h-4 w-4" /> Demo
+        </a>
+      </AnimatedButton>
+        )
+      }
+    </CardFooter>
           </Card>
+         </motion.div>
         ))}
       </div>
-    </div>
+    
+    </motion.div>
   )
 }
 
