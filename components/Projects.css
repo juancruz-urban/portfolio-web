@@ -1,0 +1,22 @@
+.projects-container {
+    padding: 4rem 0;
+  }
+  
+  .project-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  .project-card-header{
+    background: red !important;
+  }
+  
+  .project-card .card-img-top {
+    border: 2px solid red;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  
