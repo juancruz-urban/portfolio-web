@@ -21,8 +21,8 @@ export default function AboutMe() {
           transition={{ duration: 0.5 }}
           className="text-center md:w-1/3"
         >
-          <Avatar className="w-48 h-48 mx-auto mb-4">
-            <AvatarImage src="/img-me-Photoroom(1).png" alt="Juan Cruz Urban" className="object-cover contain-layout" />
+          <Avatar className="w-48 h-48 mx-auto mb-4 shad shadow-2xl">
+            <AvatarImage src="./yo.png" alt="Juan Cruz Urban" className="object-cover contain-layout" />
             <AvatarFallback>JCU</AvatarFallback>
           </Avatar>
           <h2 className="text-2xl font-bold mb-2">Juan Cruz Urban</h2>

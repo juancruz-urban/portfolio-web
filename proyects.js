@@ -1,6 +1,16 @@
 export function ProyectsArray(){
 
     const projectsArray = [
+      {
+            nombre: "Recetapp",
+            descripcion: "Página web para generar recetas de cocina con IA.",
+            descripcionAvanzada:"Desarrollada con React y Javascript en el frontend y Express en el backend. Elige los ingredientes y crea una receta con IA. Contiene registro de usuarios y la posibilidad de guardar tus recetas.",
+            imagenPortada: "/Screenshot 2025-03-06 at 11-17-39 Recetapp.png",
+            link: 'https://recetapp-pi.vercel.app/',
+            tecnologiasUsadas: ['react', 'javascript', 'bootstrap', 'node'],
+            linkGithub: "https://github.com/juancruz12345/Recetapp"
+      }
+      ,
         {
             nombre: "Federacion de Ajedrez de Olavarría",
             descripcion: "Página web para la federación de ajedrez de Olavarría.",
@@ -32,7 +42,7 @@ export function ProyectsArray(){
           descripcion: "Página web de paisajismo enfocada en jardínes.",
           descripcionAvanzada:"Aplicacion web de paisajismo enfocada en jardines. La áplicacion permite cargar una imágen de fondo y ofrece un listado de plantas para agregar al lienzo. Las plantas también están clasificadas por su nivel de mantenimiento, riego, horas de sol necesarias y además permite redimesionar las imágenes. Esta desarrollada con React JS y React Bootstrap. Para la manipulación de imagenes utilicé la Fabric JS en conjunto con el API Canvas de Javascript.",
           imagenPortada: "/Screenshot 2024-10-23 at 18-51-22 PaisajistApp.png",
-          link: 'https://paisajist-app.vercel.app/',
+          
           tecnologiasUsadas: ['react', 'javascript', 'bootstrap'],
           linkGithub: "https://github.com/juancruz12345/PaisajistApp"
         },

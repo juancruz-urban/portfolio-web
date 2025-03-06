@@ -9,6 +9,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import emailjs from '@emailjs/browser'
 import { motion } from "framer-motion"
 
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -18,8 +19,7 @@ export default function Contact() {
   const [showAlert, setShowAlert] = useState(false)
   const [loading, setLoading] = useState(false)
   const form = useRef()
-  console.log(form)
-  console.log(process.env.NEXT_PUBLIC_SERVICE_ID)
+  
   
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -108,7 +108,7 @@ export default function Contact() {
                 required
               />
             </div>
-            <Button type="submit">Enviar Mensaje</Button>
+            <Button disabled={loading} type="submit">Enviar Mensaje</Button>
           </form>
         </CardContent>
       </Card>

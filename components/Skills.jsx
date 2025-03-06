@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import {motion} from 'framer-motion'
 
+
 export default function Skills() {
   const skills = [
     { name: "React", level: 90 },
@@ -38,7 +39,8 @@ export default function Skills() {
       
       <h2 className="text-3xl font-bold text-center mb-8">Mis Habilidades</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {skills.map((skill, index) => (
+      
+       {skills.map((skill, index) => (
           <motion.div
           key={index}
           initial={{ opacity: 0, x: -50 }}
@@ -62,7 +64,8 @@ export default function Skills() {
           </Card>
           </motion.div>
         ))}
-      </div>
+       </div>
+    
     
     </motion.div>
   )
