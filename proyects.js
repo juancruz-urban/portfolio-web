@@ -2,13 +2,24 @@ export function ProyectsArray(){
 
     const projectsArray = [
       {
+        nombre: "Component Lab",
+        descripcion: "Applicacion web que permite visualizar, testear y documentar componentes React de forma interactiva.",
+        descripcionAvanzada:"Desarrollada con React, Javascript y CSS.",
+        imagenPortada: "/Screenshot 2025-05-02 at 12-21-29 ComponentLab.png",
+        link: 'https://component-lab.vercel.app',
+        tecnologiasUsadas: ['react', 'javascript'],
+        linkGithub: "https://github.com/juancruz12345/States-Generator",
+        video:'/componentelab-demo.webm'
+  },
+      {
             nombre: "Recetapp",
             descripcion: "Página web para generar recetas de cocina con IA.",
             descripcionAvanzada:"Desarrollada con React y Javascript en el frontend y Express en el backend. Elige los ingredientes y crea una receta con IA. Contiene registro de usuarios y la posibilidad de guardar tus recetas.",
             imagenPortada: "/Screenshot 2025-03-06 at 11-17-39 Recetapp.png",
             link: 'https://recetapp-pi.vercel.app/',
             tecnologiasUsadas: ['react', 'javascript', 'bootstrap', 'node'],
-            linkGithub: "https://github.com/juancruz12345/Recetapp"
+            linkGithub: "https://github.com/juancruz12345/Recetapp",
+            video:'/recetapp-demo.webm'
       }
       ,
         {

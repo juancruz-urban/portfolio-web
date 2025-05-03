@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
@@ -12,6 +13,8 @@ const AnimatedButton = motion(Button)
 
 export default function Projects() {
   const { projectsArray } = ProyectsArray()
+  const [hoveredIndex, setHoveredIndex] = useState(null)
+
 
   return (
     <motion.div
@@ -29,21 +32,29 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className={styles.projectCardWrapper}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
             <Card className={styles.projectCard}>
               <CardHeader className={styles.cardHeader}>
                 <div className={styles.imageWrapper}>
+                  
+                {project.video && hoveredIndex === index ? (
+                   <video src={project.video} autoPlay muted loop playsInline className={styles.projectVideo} />
+                  ) : (
                   <Image
                     src={project.imagenPortada || "/placeholder.svg"}
                     alt={project.nombre}
                     layout="fill"
                     objectFit="cover"
-                    className="rounded-t-lg"
-                  />
+                    
+                  />)}
+
+
                 </div>
               </CardHeader>
               <CardContent className={styles.cardContent}>
-                <CardTitle className="mb-2">{project.nombre}</CardTitle>
+                <CardTitle className="mb-2" style={{marginTop:'1.2rem'}}>{project.nombre}</CardTitle>
                 <p className={styles.projectDescription}>{project.descripcion}</p>
               </CardContent>
               <CardFooter className={styles.cardFooter}>
