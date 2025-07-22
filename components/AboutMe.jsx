@@ -29,7 +29,7 @@ export default function AboutMe() {
           <p className="text-muted-foreground mb-4">Programador Web Fullstack | Argentina</p>
           <div className="flex justify-center space-x-4">
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-              <Link href="https://github.com/juancruz12345" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/juancruz-urban" target="_blank" rel="noopener noreferrer">
                 <Github className="h-6 w-6" />
               </Link>
             </motion.div>

@@ -1,6 +1,15 @@
 export function ProyectsArray(){
 
     const projectsArray = [
+       {
+        nombre: "OverDOM",
+        descripcion: "Extension de navegador similar a DevTools pero más práctica e intuitiva",
+        descripcionAvanzada:"Desarrollada con React y Javascript.",
+        imagenPortada: "/overDOM.png",
+        tecnologiasUsadas: ['react', 'javascript'],
+        linkGithub: "https://github.com/juancruz-urban/OverDOM",
+        video:'/recorte_0-36.webm'
+  },
       {
         nombre: "Component Lab",
         descripcion: "Applicacion web que permite visualizar, testear y documentar componentes React de forma interactiva.",
@@ -8,7 +17,7 @@ export function ProyectsArray(){
         imagenPortada: "/Screenshot 2025-05-02 at 12-21-29 ComponentLab.png",
         link: 'https://component-lab.vercel.app',
         tecnologiasUsadas: ['react', 'javascript'],
-        linkGithub: "https://github.com/juancruz12345/States-Generator",
+        linkGithub: "https://github.com/juancruz-urban/States-Generator",
         video:'/componentelab-demo.webm'
   },
       {
@@ -18,7 +27,7 @@ export function ProyectsArray(){
             imagenPortada: "/Screenshot 2025-03-06 at 11-17-39 Recetapp.png",
             link: 'https://recetapp-pi.vercel.app/',
             tecnologiasUsadas: ['react', 'javascript', 'bootstrap', 'node'],
-            linkGithub: "https://github.com/juancruz12345/Recetapp",
+            linkGithub: "https://github.com/juancruz-urban/Recetapp",
             video:'/recetapp-demo.webm'
       }
       ,
@@ -29,7 +38,7 @@ export function ProyectsArray(){
             imagenPortada: "/Screenshot 2025-02-08 at 14-45-07 Federación de ajedrez Olavarría.png",
             link: 'https://federacionajedrezolavarria.onrender.com/',
             tecnologiasUsadas: ['react', 'javascript', 'bootstrap', 'node'],
-            linkGithub: "https://github.com/juancruz12345/fao-frontend"
+            linkGithub: "https://github.com/juancruz-urban/fao-frontend"
           },
           {
             nombre: "E-commerce",
@@ -37,7 +46,7 @@ export function ProyectsArray(){
             descripcionAvanzada:"E-coomerce template con registro de usuarios usando Mailboxlayer como validador de emails y Email js para enviarlos. Como base de datos utilicé Turso. El frontend cuenta con un catalogo de productos, carrito y pasarela de pago. Tambien tiene un panel de opciones para modificar datos del usuario y sus preferencias sobre las notificaciones. El backend esta desarrollado con Express y el frontend con Next js, tailwind y shadcn para la UI.",
             imagenPortada: "/Screenshot 2025-02-19 at 12-04-18 Next.js.png",
             tecnologiasUsadas: ['node','next js', 'tailwind', 'shadcn'],
-            linkGithub: "https://github.com/juancruz12345/E-commerce-Next-Frontend"
+            linkGithub: "https://github.com/juancruz-urban/E-commerce-Next-Frontend"
           },
           {
             nombre: "Truco Online",
@@ -46,7 +55,7 @@ export function ProyectsArray(){
             imagenPortada: "/Screenshot 2025-02-08 at 14-25-08 Truco online.png",
             link: 'https://truco-online.vercel.app/',
             tecnologiasUsadas: ['react', 'javascript', 'bootstrap'],
-            linkGithub: "https://github.com/juancruz12345/truco-online"
+            linkGithub: "https://github.com/juancruz-urban/truco-online"
           },
         {
           nombre: "PaisajistApp",
@@ -55,7 +64,7 @@ export function ProyectsArray(){
           imagenPortada: "/Screenshot 2024-10-23 at 18-51-22 PaisajistApp.png",
           
           tecnologiasUsadas: ['react', 'javascript', 'bootstrap'],
-          linkGithub: "https://github.com/juancruz12345/PaisajistApp"
+          linkGithub: "https://github.com/juancruz-urban/PaisajistApp"
         },
         {
           nombre: "Clothes",
@@ -63,7 +72,7 @@ export function ProyectsArray(){
           descripcionAvanzada:"E-commerce con funcion de carrito desarrollado con React, bootstrap y javascript.",
           imagenPortada: "/Screenshot 2025-02-04 at 11-03-13 Clothes.png",
           tecnologiasUsadas: ['react', 'javascript', 'bootstrap'],
-          linkGithub: "https://github.com/juancruz12345/E-commerce"
+          linkGithub: "https://github.com/juancruz-urban/E-commerce"
         },
         
         {
@@ -72,7 +81,7 @@ export function ProyectsArray(){
           descripcionAvanzada:"Pagina web para ver algunos canales de televisión, mayormente de Argentina. La web esta desarrolalda con React JS y React Bootstrap, y utiliza los embeds de free-embes.com ",
           imagenPortada: "/Screenshot 2024-09-16 at 19-06-25 TV Online.png",
           tecnologiasUsadas: ['react', 'javascript', 'bootstrap'],
-          linkGithub: "https://github.com/juancruz12345/TV-Online"
+          linkGithub: "https://github.com/juancruz-urban/TV-Online"
         },
         {
           nombre: "Drawing App",
@@ -80,7 +89,7 @@ export function ProyectsArray(){
           descripcionAvanzada:"Web app para dibujar similar a paint utilizando solo vanilla Javascript y su API Canvas JS. La aplicacion tiene la amyoria de herramientas principales para dibujar como asi tambien la posibilidad de subir una imagen o descargar el dibujo.",
           imagenPortada: "/drawingapp.png",
           tecnologiasUsadas: ['javascript', 'css'],
-          linkGithub: "https://github.com/juancruz12345/Drawing-App"
+          linkGithub: "https://github.com/juancruz-urban/Drawing-App"
         },
         {
           nombre: "Chat online",
@@ -88,7 +97,7 @@ export function ProyectsArray(){
           descripcionAvanzada:"Aplicacion de chat online. El backend utiliza Express, Turso y Socket.io para el manejo de web sockets. Tanto el backend como el frontend estan desarrollados con vanilla JS.",
           imagenPortada: "/chat.png",
           tecnologiasUsadas: ['javascript', 'node', 'css'],
-          linkGithub: "https://github.com/juancruz12345/Chat"
+          linkGithub: "https://github.com/juancruz-urban/Chat"
         },
         {
           nombre: "Tetris",
@@ -96,7 +105,7 @@ export function ProyectsArray(){
           descripcionAvanzada:"Juego de tetris desarrollado con vanilla JS utilizando el API Canvas. El juego guarda la puntuacion más alta y el nombre del jugador en el local storage.",
           imagenPortada: "/Screenshot 2024-11-02 at 14-13-49 Tetris.png",
           tecnologiasUsadas: ['javascript', 'css'],
-          linkGithub: "https://github.com/juancruz12345/Tetris-JS"
+          linkGithub: "https://github.com/juancruz-urban/Tetris-JS"
         }
         
       ];
